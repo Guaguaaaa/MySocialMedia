@@ -1,0 +1,13 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Guan;Peter;;;
+FN:Peter Guan
+NICKNAME:Yinghao
+
+EMAIL;TYPE=INTERNET:hi@peterguan.com
+
+TEL;TYPE=CELL:+12133125303
+
+URL:https://www.peterguan.com/
+
+END:VCARD

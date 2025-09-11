@@ -26,9 +26,9 @@ body {
 }
 
 /* 卡片整体的微弱悬停动画 */
-.container:hover {
-    transform: translateY(-5px);
-}
+/*.container:hover {*/
+/*    transform: translateY(-5px);*/
+/*}*/
 
 .profile-pic {
     width: 110px; /* 略小一点的头像 */
@@ -127,6 +127,12 @@ body {
 .linkedin { background-color: #0A66C2; }
 .twitter { background-color: #14171A; }
 
+/* 保存联系人按钮（放在 Professional & Other 组里） */
+.vcf {
+    background: linear-gradient(135deg, #00c6ff 0%, #0072ff 100%);
+}
+
+
 /* --- 复制成功的状态样式 --- */
 /* 当按钮拥有 .copied-success 类名时，应用以下颜色 */
 
@@ -173,6 +179,7 @@ body {
     color: #ffffff;
     border-color: #2c3e50;
 }
+
 
 /* 页脚 */
 .footer {
