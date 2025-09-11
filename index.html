@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Peter Guan - Connect With Me</title>
+
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="icon" type="image/png" href="favicon-96x96.png" sizes="96x96" />
+  <link rel="shortcut icon" href="favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="Peter G" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+
+  <img src="avatar.jpeg" alt="avatar" class="profile-pic">
+
+  <h1 class="name" data-translate-key="greeting">Hi, I'm Peter</h1>
+
+  <div class="language-switcher">
+    <button onclick="changeLanguage('en')" class="lang-btn active" data-lang="en">EN</button>
+    <button onclick="changeLanguage('zh')" class="lang-btn" data-lang="zh">简</button>
+    <button onclick="changeLanguage('ja')" class="lang-btn" data-lang="ja">日</button>
+    <button onclick="changeLanguage('ko')" class="lang-btn" data-lang="ko">한</button>
+    <button onclick="changeLanguage('es')" class="lang-btn" data-lang="es">ES</button>
+  </div>
+  <p class="bio" data-translate-key="bio">Nice to meet you in LA!<br>Choose your favorite app to connect with me.</p>
+
+  <div class="group-title"><span data-translate-key="title_primary">Primary Social</span></div>
+  <div class="links-group">
+    <a href="https://www.instagram.com/yinghao_guan/" target="_blank" class="link-button instagram"><i class="fa-brands fa-instagram"></i> Instagram</a>
+    <a href="https://wa.me/12133125303" target="_blank" class="link-button whatsapp"><i class="fa-brands fa-whatsapp"></i> WhatsApp</a>
+    <div class="link-button discord" onclick="copyToClipboard('pg_0119', this)">
+      <i class="fa-brands fa-discord"></i>
+      <span data-original-text="Discord">Discord</span>
+    </div>
+    <a href="https://www.snapchat.com/add/peterguan1" target="_blank" class="link-button snapchat"><i class="fa-brands fa-snapchat"></i> Snapchat</a>
+  </div>
+
+  <div class="group-title"><span data-translate-key="title_international">International Favorites</span></div>
+  <div class="links-group">
+    <div class="link-button wechat" onclick="copyToClipboard('gyh15522499880', this)">
+      <i class="fa-brands fa-weixin"></i>
+      <span data-original-text="WeChat" data-translate-key="btn_wechat">WeChat</span>
+    </div>
+
+    <div class="link-button kakaotalk" onclick="copyToClipboard('peterguan1', this)">
+      <i class="fa-solid fa-comment"></i>
+      <span data-original-text="KakaoTalk">KakaoTalk</span>
+    </div>
+    <a href="https://line.me/ti/p/peterguan1" target="_blank" class="link-button line"><i class="fa-brands fa-line"></i> Line</a>
+    <a href="https://t.me/pg_0119" target="_blank" class="link-button telegram"><i class="fa-brands fa-telegram"></i> Telegram</a>
+  </div>
+
+  <div class="group-title"><span data-translate-key="title_professional">Professional & Other</span></div>
+  <div class="links-group">
+    <a href="https://peterguan.com" target="_blank" class="link-button portfolio"><i class="fa-solid fa-globe"></i>
+      <span data-translate-key="btn_portfolio">Portfolio</span>
+    </a>
+    <a href="mailto:hi@peterguan.com" class="link-button email"><i class="fa-solid fa-envelope"></i>
+      <span data-translate-key="btn_email">Email Me</span></a>
+    <a href="https://www.linkedin.com/in/yinghao-guan" target="_blank" class="link-button linkedin"><i class="fa-brands fa-linkedin"></i>
+      <span data-translate-key="btn_linkedin">LinkedIn</span>
+    </a>
+    <a href="https://x.com/PeterGuan45639" target="_blank" class="link-button twitter"><i class="fa-brands fa-x-twitter"></i> X (Twitter)</a>
+  </div>
+
+</div>
+
+<script>
+  // --- 翻译词典 ---
+  // 在这里添加你所有的翻译文本
+  const translations = {
+    'en': {
+      'greeting': 'Hi, I\'m Peter',
+      'bio': 'Nice to meet you in LA!<br>Choose your favorite app to connect with me.',
+      'title_primary': 'Primary Social',
+      'title_international': 'International Favorites',
+      'title_professional': 'Professional & Other',
+      'btn_wechat': 'WeChat',
+      'btn_portfolio': 'Portfolio',
+      'btn_email': 'Email Me',
+      'btn_linkedin': 'LinkedIn',
+      'copied_text': 'ID Copied!',
+    },
+    'zh': {
+      'greeting': '你好，我是Peter',
+      'bio': '很高兴在洛杉矶认识你！<br>选择你最常用的App加我好友吧。',
+      'title_primary': '主要社交',
+      'title_international': '国际常用',
+      'title_professional': '专业平台',
+      'btn_wechat': '微信',
+      'btn_portfolio': '我的作品集',
+      'btn_email': '发送邮件',
+      'btn_linkedin': '领英',
+      'copied_text': 'ID已复制！',
+    },
+    'ja': {
+      'greeting': 'はじめまして、Peterです。',
+      'bio': 'LAでお会いできて嬉しいです！<br>お好きなアプリでご連絡ください。',
+      'title_primary': '主なSNS',
+      'title_international': '海外で人気',
+      'title_professional': 'ビジネス関連など',
+      'btn_wechat': 'WeChat', // 品牌名通常保留英文
+      'btn_portfolio': 'ポートフォリオ', // Portfolio
+      'btn_email': 'Eメール', // Email
+      'btn_linkedin': 'LinkedIn', // 品牌名通常保留英文
+      'copied_text': 'IDをコピーしました！', // ID Copied!
+    },
+    'ko': {
+      'greeting': '안녕하세요, Peter입니다.',
+      'bio': 'LA에서 만나서 반갑습니다!<br>편하신 앱으로 저를 추가해주세요.',
+      'title_primary': '주요 소셜 미디어',
+      'title_international': '해외 인기 앱',
+      'title_professional': '전문 분야 및 기타',
+      'btn_wechat': 'WeChat', // 브랜드 이름은 영어를 유지하는 것이 일반적입니다
+      'btn_portfolio': '포트폴리오', // Portfolio
+      'btn_email': '이메일', // Email
+      'btn_linkedin': 'LinkedIn', // 브랜드 이름은 영어를 유지하는 것이 일반적입니다
+      'copied_text': 'ID가 복사되었습니다!', // ID Copied!
+    },
+    'es': { // 西班牙语
+      'greeting': 'Hola, soy Peter',
+      'bio': '¡Encantado de conocerte en LA!<br>Elige tu app preferida para conectar conmigo.',
+      'title_primary': 'Redes Principales',
+      'title_international': 'Favoritas Internacionales',
+      'title_professional': 'Profesional y Otros',
+      'btn_wechat': 'WeChat',
+      'btn_portfolio': 'Portafolio',
+      'btn_email': 'Envíame un Email',
+      'btn_linkedin': 'LinkedIn',
+      'copied_text': '¡ID Copiado!',
+    }
+  };
+
+  // --- 语言切换核心功能 ---
+  function changeLanguage(lang) {
+    if (!translations[lang]) return;
+
+    // 更新所有带 data-translate-key 的元素
+    document.querySelectorAll('[data-translate-key]').forEach(element => {
+      const key = element.getAttribute('data-translate-key');
+      if (translations[lang][key]) {
+        element.innerHTML = translations[lang][key]; // 使用innerHTML以支持<br>
+        // 如果是按钮，也更新它的 data-original-text
+        if (element.tagName === 'SPAN') {
+          element.setAttribute('data-original-text', translations[lang][key]);
+        }
+      }
+    });
+
+    // 更新语言切换按钮的激活状态
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.getAttribute('data-lang') === lang);
+    });
+
+    // 将用户的语言选择保存到本地，以便下次访问时记住
+    localStorage.setItem('preferredLanguage', lang);
+  }
+
+  // --- 复制到剪贴板功能 (已整合多语言) ---
+  function copyToClipboard(text, element) {
+    navigator.clipboard.writeText(text).then(function() {
+      const icon = element.querySelector('i');
+      const span = element.querySelector('span');
+      if (!icon || !span) return;
+
+      const currentLang = localStorage.getItem('preferredLanguage') || 'en';
+      const originalText = span.getAttribute('data-original-text');
+      const originalIconClass = icon.className;
+
+      icon.className = 'fa-solid fa-check';
+      span.textContent = translations[currentLang]['copied_text'] || 'Copied!';
+      element.classList.add('copied-success');
+
+      setTimeout(() => {
+        icon.className = originalIconClass;
+        span.textContent = originalText;
+        element.classList.remove('copied-success');
+      }, 2000);
+    });
+  }
+
+  // --- 页面首次加载时的自动语言检测 ---
+  document.addEventListener('DOMContentLoaded', () => {
+    // 1. 先检查用户之前是否手动选择过语言
+    const savedLang = localStorage.getItem('preferredLanguage');
+    if (savedLang && translations[savedLang]) {
+      changeLanguage(savedLang);
+      return;
+    }
+
+    // 2. 如果没有，则检测浏览器语言
+    const browserLang = navigator.language.split('-')[0]; // 'zh-CN' -> 'zh'
+    if (translations[browserLang]) {
+      changeLanguage(browserLang);
+    } else {
+      // 默认显示英语
+      changeLanguage('en');
+    }
+  });
+</script>
+
+</body>
+</html>
